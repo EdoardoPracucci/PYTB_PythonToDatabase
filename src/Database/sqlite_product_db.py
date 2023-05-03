@@ -18,11 +18,15 @@ def create_table_product():
 
 
 def insert_product(product):
-    sql = """INSERT INTO product(id, name, price) VALUES(1,'sedia',15.20)"""
-    cur.execute(sql)
+    product_to_insert= (product.my_id, product.name, product.price)
+    sql = """INSERT INTO product(id, name, price) VALUES(?,?,?)"""
+
+    cur.execute(sql, product_to_insert)
     conn.commit()
     conn.close()
 
 
 def select_all_product():
-    pass
+    data=cur.execute('''SELECT * from product''')
+    print(data.fetchall())
+    conn.close()
