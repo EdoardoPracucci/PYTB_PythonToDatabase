@@ -1,4 +1,4 @@
-from src.Database import sqlite_product_db
+from src.Database import sqlite_product_db, mysql_product_db
 from src.Model import product
 
 
@@ -17,8 +17,11 @@ def main():
     sqlite_product_db.select_all_product()
     #
     # MYSQL db
-    #
-#
+    # insert product
+    # mysql_product_db.insert_product_mysql(my_product)
+    # select
+    mysql_product_db.select_product_mysql()
+
 
 
 if __name__ == '__main__':

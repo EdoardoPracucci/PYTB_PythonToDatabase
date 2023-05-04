@@ -27,6 +27,7 @@ def insert_product(product):
 
 
 def select_all_product():
+    print("SQLite data:")
     data=cur.execute('''SELECT * from product''')
     print(data.fetchall())
     conn.close()
